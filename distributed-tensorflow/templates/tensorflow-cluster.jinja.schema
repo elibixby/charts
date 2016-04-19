@@ -1,0 +1,32 @@
+info:
+  title: tensorflow-cluster
+  description: Creates a tensorflow cluster in kubernetes
+
+properties:
+  jobs:
+    type: array
+    items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Name of the tensorflow job
+          num_tasks:
+            type: integer
+            description: Number of tasks to run in the tensorflow job
+          port:
+            type: integer
+            default: 8080
+        required:
+          - name
+          - num_tasks
+  image:
+    type: string
+    description: Fully qualified path to the docker image which runs a tensorflow gRPC server
+    default: gcr.io/oscon-tf-workshop/tf-worker:latest
+  namespace:
+    type: string
+    description: Namespace to deploy the kubernetes objects into
+    default: default
+required:
+- jobs

@@ -1,0 +1,7 @@
+name: distributed-tensorflow
+description: A distributed trainer for tensorflow
+version: "1"
+home: ""
+expander:
+  name: Expandybird
+  entry: templates/distributed-tensorflow.jinja
